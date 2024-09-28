@@ -27,25 +27,13 @@ def show_form():
         submit_button = st.form_submit_button(label='Submit', on_click=save_form_data)
         save_form_data()
 
-#initialize images
-if 'images' not in st.session_state:
-    st.session_state.images = []
-
-uploadedimages = st.file_uploader("Upload images of your clothes here", type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
-
-if 'displayed_images' not in st.session_state: 
-    st.session_state.displayed_images = False
-
-if uploadedimages: 
-    for file in uploadedimages: 
-        st.session_state.images.append(file)
-
-if not st.session_state.displayed_images and st.session_state.images: 
-    for img in st.session_state.images: 
-        st.image(img, width=300)
-    st.session_state.displayed_images = True 
-
-if st.button('View clothing details'):
-    show_form()
-    st.write('Current form:')
+def view_clothing_details():
+    st.write('Clothing details:')
     st.write(st.session_state.form_data)
+
+uploadedimages = st.file_uploader("Upload an image of your clothing item", type=['jpg', 'jpeg', 'png'], accept_multiple_files=True)
+st.image(uploadedimages, width=200)
+if st.button('Update clothing details'): 
+    show_form()
+if st.button('View clothing details'): 
+    view_clothing_details()
