@@ -1,5 +1,6 @@
-def main(): 
-    print("AHHHHHHHHHHHHHH")
+import streamlit as st 
+import pandas as pd 
+import numpy as np
 
-if __name__ == '__main__':
-    main()
+st.title('This is the home page')
+st.page_link("pages/thefirstpage.py", label="first page", icon="🌎")
