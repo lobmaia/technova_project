@@ -21,9 +21,8 @@ def show_form():
         st.text_input('What is the brand?', value=st.session_state.form_data['brand'], key='brand')
         st.text_input('When was the last time you wore this?', value=st.session_state.form_data['last_time_worn'], key='last_time_worn')
        
-        submit_button = st.form_submit_button(label='Submit')
-        if submit_button:
-            save_form_data()
+        submit_button = st.form_submit_button(label='Submit', on_click=save_form_data)
+        save_form_data()
 
 if st.button('Show form'):
     show_form()
