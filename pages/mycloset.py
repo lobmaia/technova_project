@@ -27,13 +27,20 @@ def show_form():
         submit_button = st.form_submit_button(label='Submit', on_click=save_form_data)
         save_form_data()
 
+#view the data collected from the form 
 def view_clothing_details():
     st.write('Clothing details:')
     st.write(st.session_state.form_data)
 
+#upload images 
 uploadedimages = st.file_uploader("Upload an image of your clothing item", type=['jpg', 'jpeg', 'png'], accept_multiple_files=True)
+
+#show the images  
 st.image(uploadedimages, width=200)
+
+#show form 
 if st.button('Update clothing details'): 
     show_form()
+#show clothing details
 if st.button('View clothing details'): 
     view_clothing_details()
