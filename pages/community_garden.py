@@ -20,7 +20,7 @@ if st.button("View your item details"):
         st.write("Condition:", condition)
         st.write("Brand:", brand)
         st.write("Selling Price:", item_price)
-
+py
 st.image("community_garden_images/gucci_shirt.png", width=300)
 st.write("Robert Pattison wants to sell his shirt!")
 if st.button("Show Robert's Shirt Details"):
