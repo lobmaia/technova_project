@@ -2,7 +2,7 @@ import streamlit as st
 
 # personalized home page
 if 'logged_in' in st.session_state and st.session_state['logged_in']:
-    st.title("Welcome to Sewtainabilty")
+    st.title("Welcome to Sewstainability")
     st.write(f"Hello, {st.session_state['username']}!")
     st.write('Our mission is to promote green sewlutions for overconsumption in clothing. We aim to help you reduce your carbon footprint by providing you with the tools to make sustainable choices in your wardrobe.')
 
