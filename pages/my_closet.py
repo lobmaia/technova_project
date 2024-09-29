@@ -20,9 +20,9 @@ def save_form_data():
 def show_form():
     with st.form(key='my_form'):
         st.write('Enter the details of your clothing item below:')
-        st.text_input('When did you buy this piece?', value=st.session_state.form_data['date_purchased'], key='date_purchased')
-        st.text_input('What is the brand?', value=st.session_state.form_data['brand'], key='brand')
-        st.text_input('When was the last time you wore this?', value=st.session_state.form_data['last_time_worn'], key='last_time_worn')
+        st.text_input('When did you buy this piece?', value = st.session_state.form_data['date_purchased'], key='date_purchased')
+        st.text_input('What is the brand?', value=st.session_state.form_data['brand'], key = 'brand')
+        st.text_input('When was the last time you wore this?', value=st.session_state.form_data['last_time_worn'], key = 'last_time_worn')
        
         submit_button = st.form_submit_button(label='Submit', on_click=save_form_data)
         save_form_data()
@@ -32,15 +32,24 @@ def view_clothing_details():
     st.write('Clothing details:')
     st.write(st.session_state.form_data)
 
-#upload images 
-uploadedimages = st.file_uploader("Upload an image of your clothing item", type=['jpg', 'jpeg', 'png'], accept_multiple_files=True)
+'''#upload images 
+uploadedimages = st.file_uploader("Upload an image of your clothing item", type = ['jpg', 'jpeg', 'png'], accept_multiple_files = True)
 
 #show the images  
-st.image(uploadedimages, width=200)
+st.image(uploadedimages, width = 200)
 
 #show form 
 if st.button('Update clothing details'): 
     show_form()
 #show clothing details
 if st.button('View clothing details'): 
-    view_clothing_details()
+    view_clothing_details()'''
+
+if 'images' not in st.session_state:
+    st.session_state.images = [] 
+
+uploadedimages = st.file_uploader(label = "Upload your clothes here" , type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
+if uploadedimages: 
+    for file in uploadedimages: 
+        st.session_state.images.append(file)
+        st.image
