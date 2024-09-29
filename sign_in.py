@@ -8,4 +8,4 @@ username = st.text_input('Username')
 #submit = st.button('Login')
 
 st.page_link("pages/home_page.py", label = 'Go to Home Page')
-st.image("edward_face.png")
+st.image("logo.png")
