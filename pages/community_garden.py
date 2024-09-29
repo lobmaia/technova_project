@@ -4,11 +4,26 @@ import webbrowser
 
 st.title("Welcome to the Community Garden!")
 st.write("Here, you can find items that other users are selling")
+st.write("You can also sell your own items")
 
-robert = "community_garden_images/gucci_shirt.png"
-sabrina = "community_garden_images/dress.jpg"
-bob = "community_garden_images/goingoutfit.webp"
-jojo = "community_garden_images/hashtagelsa.jpg"
+def showmyform(): 
+    with st.form("my_form"):
+        st.text("Enter the details of the item you want to sell")
+        your_name = st.text_input("Enter your name")
+        date_purchased = st.text_area("When did you buy this item?")
+        condition = st.text_input("Enter the condition of the item")
+        brand = st.text_input("Enter the brand of the item")
+        item_price = st.number_input("Enter item price")
+        submit_button = st.form_submit_button("Submit")
+
+if st.button("Sell an item"):
+    showmyform()
+if st.button("View item details"):
+    st.write("Owner: Your Name")
+    st.write("Date Purchased: Date Purchased")
+    st.write("Condition: Condition")
+    st.write("Brand: Brand")
+    st.write("Selling Price: Item Price")
 
 st.image("community_garden_images/gucci_shirt.png", width=300)
 st.write("Robert Pattison wants to sell his shirt!")

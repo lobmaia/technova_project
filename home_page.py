@@ -1,6 +1,4 @@
 import streamlit as st 
-import pandas as pd 
-import numpy as np
 
 st.title('Hello! Welcome to Sewstainability!')
 st.write('Our mission is to promote green sewlutions for overconsumption in clothing. We aim to help you reduce your carbon footprint by providing you with the tools to make sustainable choices in your wardrobe.')
