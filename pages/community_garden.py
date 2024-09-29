@@ -6,24 +6,20 @@ st.title("Welcome to the Community Garden!")
 st.write("Here, you can find items that other users are selling")
 st.write("You can also sell your own items")
 
-def showmyform(): 
-    with st.form("my_form"):
-        st.text("Enter the details of the item you want to sell")
-        your_name = st.text_input("Enter your name")
-        date_purchased = st.text_area("When did you buy this item?")
-        condition = st.text_input("Enter the condition of the item")
-        brand = st.text_input("Enter the brand of the item")
-        item_price = st.number_input("Enter item price")
-        submit_button = st.form_submit_button("Submit")
-
-if st.button("Sell an item"):
-    showmyform()
-if st.button("View item details"):
-    st.write("Owner: Your Name")
-    st.write("Date Purchased: Date Purchased")
-    st.write("Condition: Condition")
-    st.write("Brand: Brand")
-    st.write("Selling Price: Item Price")
+with st.form("my_form"):
+    st.text("Enter the details of the item you want to sell")
+    your_name = st.text_input("Enter your name")
+    date_purchased = st.text_area("When did you buy this item?")
+    condition = st.text_input("Enter the condition of the item")
+    brand = st.text_input("Enter the brand of the item")
+    item_price = st.number_input("Enter item price")
+    submit_button = st.form_submit_button("Submit")
+if st.button("View your item details"):
+        st.write("Your Name:", your_name)
+        st.write("Date Purchased:", date_purchased)
+        st.write("Condition:", condition)
+        st.write("Brand:", brand)
+        st.write("Selling Price:", item_price)
 
 st.image("community_garden_images/gucci_shirt.png", width=300)
 st.write("Robert Pattison wants to sell his shirt!")
