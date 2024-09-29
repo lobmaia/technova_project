@@ -35,8 +35,9 @@ def view_clothing_details():
 if 'images' not in st.session_state:
     st.session_state.images = [] 
 
-uploadedimages = st.file_uploader(label = "Upload your clothes here" , type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
-if uploadedimages: 
-    for file in uploadedimages: 
-        st.session_state.images.append(file)
-        st.image
+uploadedimages = st.file_uploader("Upload an image of your clothing item", type=['jpg', 'jpeg', 'png'], accept_multiple_files=True)
+st.image(uploadedimages, width=200)
+if st.button('Update clothing details'): 
+    show_form()
+if st.button('View clothing details'):
+    view_clothing_details()
