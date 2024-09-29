@@ -19,6 +19,9 @@ st.text("You have")
 st.text(milestone_progress)
 st.text ("flowers in your garden!")
 
+
 #images
 img=Image.open('flower_resized.png')
 st.image([img,img,img])
+
+
